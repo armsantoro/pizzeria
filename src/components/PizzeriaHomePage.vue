@@ -10,18 +10,18 @@
     <h2>Sottotitolo</h2>
 
     <div class="pizza-container">
-      <div class="pizza-card" v-for="pizza in pizze" :key="pizza.name">
-        <img :src="pizza.image" :alt="pizza.name">
+      <div class="pizza-card" v-for="(pizza, index) in pizze" :key="pizza.name">
+        <img :src="pizza.image" alt="Pizza">
         <div class="pizza-info">
-          <div>
-            <h3>{{ pizza.name }}</h3>
-            <p>{{ pizza.description }}</p>
-            <p>{{ pizza.price }}€</p>
+          <h3>{{pizza.name}}</h3>
+          <p>{{pizza.description}}</p>
+          <div class="price-quantity">
+            <p>Prezzo: {{pizza.price}}€</p>
+            <select v-model="pizza.quantity">
+              <option disabled value="">Seleziona la quantità</option>
+              <option v-for="i in 10" :key="i">{{i}}</option>
+            </select>
           </div>
-          <select v-model="pizza.quantity" class="quantity-select">
-            <option disabled value="">Seleziona la quantità</option>
-            <option v-for="number in 10" :key="number">{{ number }}</option>
-          </select>
         </div>
       </div>
     </div>

@@ -1,17 +1,18 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <pizzeria-home-page></pizzeria-home-page>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import PizzeriaHomePage from './components/PizzeriaHomePage.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    PizzeriaHomePage
+  },
+};
 </script>
 
 <style>

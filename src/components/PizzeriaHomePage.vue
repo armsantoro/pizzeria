@@ -1,44 +1,45 @@
 <template>
   <div>
     <div id="header">
-      <video loop autoplay >
+      <video loop autoplay muted>
         <source src="../assets/pizzaneon.mp4" type="video/mp4"> 
       </video>
     </div>
-    <img class="banner" src="banner.jpg" alt="Banner Pizzeria">
-    <h1>Titolo</h1>
-    <h2>Sottotitolo</h2>
-
-    <div class="pizza-container">
-      <div class="pizza-card" v-for="(pizza, index) in pizze" :key="pizza.name">
-        <img :src="pizza.image" alt="Pizza">
-        <div class="pizza-info">
-          <h3>{{pizza.name}}</h3>
-          <p>{{pizza.description}}</p>
-          <div class="price-quantity">
-            <p>Prezzo: {{pizza.price}}€</p>
-            <select v-model="pizza.quantity">
-              <option disabled value="">Seleziona la quantità</option>
-              <option v-for="i in 10" :key="i">{{i}}</option>
-            </select>
+    <div id="content"> 
+      <h1>JOE's PIZZA</h1>
+      <h2>LA PIZZA PIU' BUONA DI NEW YORK</h2>
+    
+      <div class="pizza-container">
+        <div class="pizza-card" v-for="(pizza, index) in pizze" :key="index">
+          <img :src="pizza.image" alt="Pizza">
+          <div class="pizza-info">
+            <h3>{{pizza.name}}</h3>
+            <p>{{pizza.description}}</p>
+            <div class="price-quantity">
+              <p>Prezzo: {{pizza.price}}€</p>
+              <select v-model="pizza.quantity">
+                <option disabled value="">Seleziona la quantità</option>
+                <option v-for="i in 10" :key="i">{{i}}</option>
+              </select>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <form>
-      <input type="text" name="nome" placeholder="Nome">
-      <input type="text" name="cognome" placeholder="Cognome">
-      <input type="email" name="email" placeholder="Email">
-      <input type="tel" name="telefono" placeholder="Numero di Telefono">
-      <input type="text" name="indirizzo" placeholder="Indirizzo">
-      <textarea name="ordine" placeholder="Scrivi qui il tuo ordine"></textarea>
-      <button type="submit">Ordina ora</button>
-    </form>
+      <form>
+        <input type="text" name="nome" placeholder="Nome">
+        <input type="text" name="cognome" placeholder="Cognome">
+        <input type="email" name="email" placeholder="Email">
+        <input type="tel" name="telefono" placeholder="Numero di Telefono">
+        <input type="text" name="indirizzo" placeholder="Indirizzo">
+        <textarea name="ordine" placeholder="Scrivi qui il tuo ordine"></textarea>
+        <button type="submit">Ordina ora</button>
+      </form>
 
-    <div id="footer">
-      <p>Joe's Pizza - consegna in 3 minuti</p>
-      <p>Contatti: joespizza@bellanapoli.it - 3493333333</p>
+      <div id="footer">
+        <p>Joe's Pizza - consegna in 3 minuti</p>
+        <p>Contatti: joespizza@bellanapoli.it - 3493333333</p>
+      </div>
     </div>
   </div>
 </template>

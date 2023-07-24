@@ -1,12 +1,11 @@
-body {
-  font-family: Arial, sans-serif;
-}
+$headerHeight: 200px;
+$smallHeaderHeight: 100px;
 
 #header {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 200px;
+  height: $headerHeight;
   background-color: #333;
   color: white;
   text-align: center;
@@ -19,6 +18,9 @@ body {
   }
 }
 
+#content {
+  margin-top: $headerHeight;
+}
 #header img {
   height: 30px;
   vertical-align: middle;
@@ -56,6 +58,15 @@ form input, form textarea {
   position: relative;
   bottom: 0;
   width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  #header{
+    height: $smallHeaderHeight;
+  }
+  #content{
+    margin-top: $smallHeaderHeight;
+  }
 }
 
 @media (min-width: 768px) {

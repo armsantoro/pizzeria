@@ -11,15 +11,15 @@
     
       <div class="pizza-container">
         <div class="pizza-card" v-for="(pizza, index) in pizze" :key="index">
-          <img :src="pizza.image" alt="Pizza">
+          <img :src="pizza.image" alt="Pizza" class="pizza-img">
           <div class="pizza-info">
-            <h3>{{pizza.name}}</h3>
-            <p>{{pizza.description}}</p>
+            <h3>{{ pizza.name }}</h3>
+            <p>{{ pizza.description }}</p>
             <div class="price-quantity">
-              <p>Prezzo: {{pizza.price}}€</p>
+              <p>Prezzo: {{ pizza.price }}€</p>
               <select v-model="pizza.quantity">
                 <option disabled value="">Seleziona la quantità</option>
-                <option v-for="i in 10" :key="i">{{i}}</option>
+                <option v-for="i in 10" :key="i">{{ i }}</option>
               </select>
             </div>
           </div>
@@ -70,7 +70,29 @@
           price: 7,
           image: require('../assets/marinara.png'),
           quantity: ''
-        }
+        },
+        {
+          name: 'Vegana',
+          description: 'Ingredienti: pomodoro, melanzane, peperoni, zucchine',
+          price: 7,
+          image: require('../assets/vegana.png'),
+          quantity: ''
+        },
+        {
+          name: '4 formaggi',
+          description: 'Ingredienti: gorgonzola, taleggio, hemmental, mozzarella',
+          price: 7,
+          image: require('../assets/4formaggi.png'),
+          quantity: ''
+        },
+        {
+          name: 'Wurstel e Patate',
+          description: 'Ingredienti: pomodoro, mozzarella, wurstel, patate fritte',
+          price: 7,
+          image: require('../assets/patate.png'),
+          quantity: ''
+        },
+      
       ]
     }
   },
